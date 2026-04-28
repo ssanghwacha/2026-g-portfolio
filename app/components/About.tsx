@@ -21,6 +21,7 @@ function PhotoSlot({ tall = false }: { tall?: boolean }) {
 }
 
 export default function About() {
+  const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const photoRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -30,35 +31,52 @@ export default function About() {
     const ctx = gsap.context(() => {
       const st = { toggleActions: "play none none reset" };
 
-      gsap.fromTo(headingRef.current, { opacity: 0, y: 40 }, {
-        opacity: 1, y: 0, duration: 1, ease: "power3.out",
-        scrollTrigger: { trigger: headingRef.current, start: "top 85%", ...st },
-      });
       gsap.fromTo(photoRef.current, { opacity: 0, y: 30 }, {
-        opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.1,
-        scrollTrigger: { trigger: photoRef.current, start: "top 85%", ...st },
+        opacity: 1, y: 0, duration: 1, ease: "power3.out",
+        scrollTrigger: { trigger: photoRef.current, start: "top 90%", ...st },
+      });
+      gsap.fromTo(headingRef.current, { opacity: 0, y: 50 }, {
+        opacity: 1, y: 0, duration: 1.2, ease: "power3.out",
+        scrollTrigger: { trigger: headingRef.current, start: "top 90%", ...st },
       });
       gsap.fromTo(bodyRef.current, { opacity: 0, y: 30 }, {
-        opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.15,
-        scrollTrigger: { trigger: bodyRef.current, start: "top 85%", ...st },
+        opacity: 1, y: 0, duration: 1, ease: "power3.out",
+        scrollTrigger: { trigger: bodyRef.current, start: "top 90%", ...st },
       });
       gsap.fromTo(boxRef.current, { opacity: 0, y: 40 }, {
         opacity: 1, y: 0, duration: 1, ease: "power3.out",
         scrollTrigger: { trigger: boxRef.current, start: "top 85%", ...st },
       });
-    });
+    }, sectionRef);
 
-    const timer = setTimeout(() => ScrollTrigger.refresh(), 300);
+    const timer = setTimeout(() => ScrollTrigger.refresh(), 500);
     return () => { ctx.revert(); clearTimeout(timer); };
   }, []);
 
   return (
-    <section id="about" className="w-full px-8 pt-40 pb-32" style={{ maxWidth: 1440, margin: "0 auto" }}>
+    <section ref={sectionRef} className="w-full px-8 pt-[460px] pb-[400px]" style={{ maxWidth: 1440, margin: "0 auto" }}>
+
+      {/* Photo grid */}
+      <div id="about" style={{ scrollMarginTop: 200 }} />
+      <div ref={photoRef} className="grid grid-cols-4 gap-2 mb-14">
+        <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden">
+          <Image src="/assets/about/IMG_0219.JPG" alt="" fill className="object-cover" />
+        </div>
+        <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden">
+          <Image src="/assets/about/IMG_0254.JPG" alt="" fill className="object-cover" />
+        </div>
+        <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden">
+          <Image src="/assets/about/IMG_0265.jpg" alt="" fill className="object-cover" />
+        </div>
+        <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden">
+          <Image src="/assets/about/IMG_4513.JPG" alt="" fill className="object-cover" />
+        </div>
+      </div>
 
       {/* Heading */}
       <h2
         ref={headingRef}
-        className="text-center font-medium uppercase text-white mb-10"
+        className="text-center font-medium uppercase text-white mb-10 mt-[100px]"
         style={{
           fontSize: 48,
           lineHeight: "110%",
@@ -72,14 +90,6 @@ export default function About() {
         <br />
         with a strong&nbsp; foundation&nbsp; in Branding.
       </h2>
-
-      {/* Photo grid */}
-      <div ref={photoRef} className="grid grid-cols-4 gap-2 mb-14">
-        <PhotoSlot tall />
-        <PhotoSlot />
-        <PhotoSlot tall />
-        <PhotoSlot />
-      </div>
 
       {/* Description + buttons */}
       <div ref={bodyRef} className="flex flex-col items-center text-center mb-24">
@@ -130,7 +140,7 @@ export default function About() {
       </div>
 
       {/* Career + Education boxes */}
-      <div ref={boxRef} className="grid grid-cols-2 gap-4">
+      <div ref={boxRef} className="grid grid-cols-1 min-[800px]:grid-cols-2 gap-4 mt-[200px]">
 
         {/* Career */}
         <div
@@ -164,8 +174,8 @@ export default function About() {
               className="flex items-center justify-between py-4 border-t border-white/10"
               style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
             >
-              <span className="text-white/85 text-sm font-medium">{role}</span>
-              <span className="text-white/45 text-sm">{company}&nbsp;&nbsp;{year}</span>
+              <span className="text-white font-medium" style={{ fontSize: 16 }}>{role}</span>
+              <span className="text-white/70" style={{ fontSize: 16 }}>{company}&nbsp;&nbsp;{year}</span>
             </div>
           ))}
         </div>
@@ -191,8 +201,8 @@ export default function About() {
               className="flex items-start justify-between py-4 border-t border-white/10 gap-4"
               style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
             >
-              <span className="text-white/85 text-sm font-medium" style={{ maxWidth: "55%" }}>{degree}</span>
-              <span className="text-white/45 text-sm text-right">{school}&nbsp;&nbsp;{year}</span>
+              <span className="text-white font-medium" style={{ fontSize: 16, maxWidth: "55%" }}>{degree}</span>
+              <span className="text-white/70 text-right" style={{ fontSize: 16 }}>{school}&nbsp;&nbsp;{year}</span>
             </div>
           ))}
         </div>
