@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden" style={{ height: "80vh" }}>
       <Image
-        src="/assets/hero-bg.png"
+        src="/assets/hero-bg.jpg"
         alt=""
         fill
         priority
