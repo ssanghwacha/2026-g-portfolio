@@ -41,7 +41,7 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full px-8 pt-[460px] pb-[400px]" style={{ maxWidth: 1920, margin: "0 auto" }}>
+    <section ref={sectionRef} className="w-full px-8 pt-[460px] pb-[400px]" style={{ maxWidth: 1440, margin: "0 auto" }}>
 
       {/* Photo grid */}
       <div id="about" style={{ scrollMarginTop: 200 }} />

@@ -7,7 +7,7 @@ export default function Footer() {
       {/* Top info row */}
       <div
         className="flex justify-between items-center"
-        style={{ maxWidth: 1920, margin: "0 auto 24px", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+        style={{ maxWidth: 1440, margin: "0 auto 24px", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
       >
         <span className="text-sm" style={{ color: C, opacity: 0.5 }}>
           Available for freelance
@@ -22,7 +22,7 @@ export default function Footer() {
       </div>
 
       {/* Divider */}
-      <div style={{ maxWidth: 1920, margin: "0 auto" }}>
+      <div style={{ maxWidth: 1440, margin: "0 auto" }}>
         <div style={{ height: 1, background: `rgba(107,124,255,0.2)`, marginBottom: 24 }} />
       </div>
 

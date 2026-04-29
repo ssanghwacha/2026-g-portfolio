@@ -11,12 +11,12 @@ gsap.registerPlugin(ScrollTrigger);
 const filters = ["All", "Graphic Design", "Brand Design", "Product Design"];
 
 const projects = [
-  { id: 1, category: "Graphic Design", tags: ["Velot", "Design", "Branding"], href: "/projects/velot", thumb: "/assets/projects/velot.png" },
-  { id: 2, category: "Brand Design", tags: ["BGZT", "Editorial", "Print"], href: null, thumb: "/assets/projects/bgzt.png" },
-  { id: 3, category: "Product Design", tags: ["Dumpl", "UI/UX", "Web"], href: null, thumb: "/assets/projects/dumpl.png" },
-  { id: 4, category: "Graphic Design", tags: ["Fianchetto", "Photography", "Art Direction"], href: null, thumb: "/assets/projects/fianchetto.png" },
-  { id: 5, category: "Product Design", tags: ["Altra", "Motion", "Identity"], href: null, thumb: "/assets/projects/altra.png" },
-  { id: 6, category: "Brand Design", tags: ["Billow", "Packaging", "Branding"], href: null, thumb: "/assets/projects/billow.png" },
+  { id: 1, category: "Graphic Design", tags: ["Velot", "Design", "Branding"], href: "/projects/velot", thumb: "/assets/projects/velot.png", wide: true },
+  { id: 2, category: "Brand Design", tags: ["BGZT", "Editorial", "Print"], href: null, thumb: "/assets/projects/bgzt.png", wide: false },
+  { id: 3, category: "Product Design", tags: ["Dumpl", "UI/UX", "Web"], href: null, thumb: "/assets/projects/dumpl.png", wide: false },
+  { id: 4, category: "Graphic Design", tags: ["Fianchetto", "Photography", "Art Direction"], href: null, thumb: "/assets/projects/fianchetto.png", wide: true },
+  { id: 5, category: "Product Design", tags: ["Altra", "Motion", "Identity"], href: null, thumb: "/assets/projects/altra.png", wide: true },
+  { id: 6, category: "Brand Design", tags: ["Billow", "Packaging", "Branding"], href: null, thumb: "/assets/projects/billow.png", wide: false },
 ];
 
 function ProjectCard({ project }: { project: typeof projects[number] }) {
@@ -42,8 +42,7 @@ function ProjectCard({ project }: { project: typeof projects[number] }) {
 
   const inner = (
     <div
-      className="relative aspect-[4/5] rounded-xl overflow-hidden cursor-pointer"
-      style={{ background: "rgba(107,124,255,0.08)" }}
+      className="relative aspect-[4/5] rounded-xl bg-zinc-900 overflow-hidden cursor-pointer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -87,22 +86,21 @@ export default function Projects() {
     <section
       id="projects"
       className="py-24 px-8 w-full"
-      style={{ maxWidth: 1920, margin: "0 auto" }}
+      style={{ maxWidth: 1440, margin: "0 auto" }}
     >
-      <h2 className="text-2xl font-bold mb-6" style={{ color: "#6B7CFF" }}>Selected Works</h2>
+      <h2 className="text-2xl font-bold mb-6">Selected Works</h2>
 
       <div className="flex items-center gap-8 mb-10">
         {filters.map((f) => (
           <button
             key={f}
             onClick={() => setActive(f)}
-            className="flex items-center gap-2 text-sm font-medium transition-opacity"
+            className="flex items-center gap-2 text-sm font-medium transition-colors"
           >
             <span
-              className="w-4 h-4 rounded-sm transition-colors"
-              style={{ background: active === f ? "#6B7CFF" : "rgba(107,124,255,0.2)" }}
+              className={`w-4 h-4 rounded-sm transition-colors ${active === f ? "bg-white" : "bg-zinc-700"}`}
             />
-            <span style={{ color: active === f ? "#6B7CFF" : "rgba(107,124,255,0.4)" }}>
+            <span className={active === f ? "text-white" : "text-zinc-500"}>
               {f}
             </span>
           </button>
