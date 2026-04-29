@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import Logo from "./Logo";
 
@@ -12,6 +13,17 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLogoClick = () => {
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      router.push("/");
+    }
+  };
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -26,9 +38,9 @@ export default function Navbar() {
         }}
         className="flex items-center bg-black rounded-full transition-all duration-300 overflow-hidden"
       >
-        <a href="#" aria-label="Home" className="shrink-0">
+        <button onClick={handleLogoClick} aria-label="Home" className="shrink-0 cursor-pointer">
           <Logo width="auto" height={38} fill="white" />
-        </a>
+        </button>
 
         <div className="flex flex-1 items-center justify-end gap-5">
           <a

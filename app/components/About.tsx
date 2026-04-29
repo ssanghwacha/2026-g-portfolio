@@ -76,7 +76,7 @@ export default function About() {
     <section ref={sectionRef} className="w-full px-8 pt-[360px] pb-[400px]" style={{ maxWidth: 1440, margin: "0 auto" }}>
 
       {/* Photo fan */}
-      <div id="about" style={{ scrollMarginTop: 200 }} />
+      <div id="about" style={{ scrollMarginTop: 80 }} />
       <div
         ref={photoRef}
         className="relative flex items-end justify-center w-full mb-14 overflow-visible cursor-pointer"
