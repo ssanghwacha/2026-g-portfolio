@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="w-full">
         <Hero />
         <Projects />
-        <div style={{ background: "linear-gradient(to bottom, #121212 0%, #58778B 45%, #E7E7E7 100%)" }}>
+        <div style={{ background: "linear-gradient(to bottom, #121212 0%, #58778B 45%, #E7E7E7 100%)", width: "100%" }}>
           <About />
           <Footer />
         </div>

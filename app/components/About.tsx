@@ -1,13 +1,45 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const fan = [
+  { rotate: -42, x: -580, y: 90 },
+  { rotate: -28, x: -385, y: 45 },
+  { rotate: -14, x: -193, y: 12 },
+  { rotate:   0, x:   0,  y:  0 },
+  { rotate:  14, x:  193, y: 12 },
+  { rotate:  28, x:  385, y: 45 },
+  { rotate:  42, x:  580, y: 90 },
+];
+
+const fanHov = [
+  { rotate: -52, x: -660, y: 110 },
+  { rotate: -35, x: -440, y: 58  },
+  { rotate: -17, x: -220, y: 16  },
+  { rotate:   0, x:   0,  y:  0  },
+  { rotate:  17, x:  220, y: 16  },
+  { rotate:  35, x:  440, y: 58  },
+  { rotate:  52, x:  660, y: 110 },
+];
+
+// 사진 추가 시 여기에 경로 입력 (null = 플레이스홀더)
+const photos: (string | null)[] = [
+  null,
+  null,
+  "/assets/about/IMG_0219.JPG",
+  "/assets/about/IMG_0254.JPG",
+  "/assets/about/IMG_0265.jpg",
+  "/assets/about/IMG_4513.JPG",
+  null,
+];
+
 export default function About() {
+  const [hovered, setHovered] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const photoRef = useRef<HTMLDivElement>(null);
@@ -43,39 +75,51 @@ export default function About() {
   return (
     <section ref={sectionRef} className="w-full px-8 pt-[460px] pb-[400px]" style={{ maxWidth: 1440, margin: "0 auto" }}>
 
-      {/* Photo grid */}
+      {/* Photo fan */}
       <div id="about" style={{ scrollMarginTop: 200 }} />
-      <div ref={photoRef} className="grid grid-cols-4 gap-2 mb-14">
-        <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden">
-          <Image src="/assets/about/IMG_0219.JPG" alt="" fill className="object-cover" />
-        </div>
-        <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden">
-          <Image src="/assets/about/IMG_0254.JPG" alt="" fill className="object-cover" />
-        </div>
-        <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden">
-          <Image src="/assets/about/IMG_0265.jpg" alt="" fill className="object-cover" />
-        </div>
-        <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden">
-          <Image src="/assets/about/IMG_4513.JPG" alt="" fill className="object-cover" />
-        </div>
+      <div
+        ref={photoRef}
+        className="relative flex items-end justify-center w-full mb-14 overflow-visible cursor-pointer"
+        style={{ height: 420 }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        {fan.map((p, i) => {
+          const t = hovered ? fanHov[i] : p;
+          return (
+            <div
+              key={i}
+              className="absolute w-[200px] h-[260px] rounded-xl shadow-xl overflow-hidden"
+              style={{
+                transform: `translateX(${t.x}px) translateY(${t.y}px) rotate(${t.rotate}deg)`,
+                transition: "transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                background: "#3f3f46",
+              }}
+            >
+              {photos[i] && (
+                <Image src={photos[i]!} alt="" fill className="object-cover" />
+              )}
+            </div>
+          );
+        })}
       </div>
 
       {/* Heading */}
       <h2
         ref={headingRef}
-        className="text-center font-medium uppercase text-white mb-10 mt-[100px]"
+        className="text-center font-medium text-white mb-10 mt-[100px]"
         style={{
-          fontSize: 48,
-          lineHeight: "110%",
+          fontSize: 36,
+          lineHeight: "140%",
           letterSpacing: "-0.01em",
-          fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+          fontFamily: "var(--font-boldonse), system-ui",
         }}
       >
-        Hi,{" "}
-        <Image src="/assets/smiley-fill.svg" alt="smile" width={48} height={48} className="inline-block align-middle" />
-        {" "}I&apos;m Sangwha,&nbsp; Graphic Designer
+        Hi,<Image src="/assets/smiley-fill.svg" alt="smile" width={48} height={48} className="inline-block" style={{ verticalAlign: "middle", marginBottom: 8 }} />
         <br />
-        with a strong&nbsp; foundation&nbsp; in Branding.
+        I&apos;m Sangwha, Graphic Designer
+        <br />
+        with a strong foundation in Branding.
       </h2>
 
       {/* Description + buttons */}

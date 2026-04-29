@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Boldonse } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-});
+const boldonse = Boldonse({ weight: "400", variable: "--font-boldonse", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sangwha Cha",
-  description: "Portfolio of Sangwha Cha — Frontend Developer & Designer",
+  description: "Portfolio of Sangwha Cha — Graphic Designer",
 };
 
 export default function RootLayout({
@@ -18,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-[family-name:var(--font-space-grotesk)]">
+    <html lang="en" className={`h-full antialiased ${boldonse.variable}`}>
+      <body className="min-h-full flex flex-col">
         {children}
       </body>
     </html>
