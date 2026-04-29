@@ -7,19 +7,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function PhotoSlot({ tall = false }: { tall?: boolean }) {
-  return (
-    <div
-      className={`w-full rounded-xl flex items-center justify-center ${tall ? "aspect-[3/4]" : "aspect-[4/5]"}`}
-      style={{ border: "1.5px dashed rgba(255,255,255,0.2)", background: "rgba(255,255,255,0.04)" }}
-    >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M12 5v14M5 12h14" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    </div>
-  );
-}
-
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -54,7 +41,7 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full px-8 pt-[460px] pb-[400px]" style={{ maxWidth: 1440, margin: "0 auto" }}>
+    <section ref={sectionRef} className="w-full px-8 pt-[460px] pb-[400px]" style={{ maxWidth: 1920, margin: "0 auto" }}>
 
       {/* Photo grid */}
       <div id="about" style={{ scrollMarginTop: 200 }} />
@@ -96,12 +83,8 @@ export default function About() {
         <p
           className="text-white/70 mb-3"
           style={{
-            fontSize: 18,
-            fontWeight: 400,
-            lineHeight: "120%",
-            letterSpacing: "0.05em",
-            maxWidth: 696,
-            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+            fontSize: 18, fontWeight: 400, lineHeight: "120%", letterSpacing: "0.05em",
+            maxWidth: 696, fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
           }}
         >
           My design journey started with branding. I was drawn to how small details, often
@@ -111,10 +94,7 @@ export default function About() {
         <p
           className="text-white/70 mb-8"
           style={{
-            fontSize: 18,
-            fontWeight: 400,
-            lineHeight: "120%",
-            letterSpacing: "0.05em",
+            fontSize: 18, fontWeight: 400, lineHeight: "120%", letterSpacing: "0.05em",
             fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
           }}
         >
@@ -148,10 +128,7 @@ export default function About() {
           style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
         >
           <div className="flex items-center justify-between mb-8">
-            <h3
-              className="text-white font-medium text-xl"
-              style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
-            >
+            <h3 className="text-white font-medium text-xl" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
               Career
             </h3>
             <a
@@ -185,10 +162,7 @@ export default function About() {
           className="rounded-2xl p-8"
           style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
         >
-          <h3
-            className="text-white font-medium text-xl mb-8"
-            style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
-          >
+          <h3 className="text-white font-medium text-xl mb-8" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
             Education
           </h3>
           {[

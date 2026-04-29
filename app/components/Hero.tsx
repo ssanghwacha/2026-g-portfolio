@@ -4,12 +4,13 @@ import LocationBar from "./LocationBar";
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden" style={{ height: "80vh" }}>
-      <Image
-        src="/assets/hero-bg.jpg"
-        alt=""
-        fill
-        priority
-        className="object-cover"
+      <video
+        src="https://golden-parfait-60a7b7.netlify.app/001.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
       <div className="absolute inset-0 bg-black/30" />

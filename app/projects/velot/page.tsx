@@ -42,7 +42,7 @@ export default function VelotPage() {
       <Navbar />
 
       {/* Header */}
-      <div className="w-full px-8 pt-32 pb-16" style={{ maxWidth: 1440, margin: "0 auto" }}>
+      <div className="w-full px-8 pt-32 pb-16" style={{ maxWidth: 1920, margin: "0 auto" }}>
         <p
           className="mb-4"
           style={{
@@ -91,14 +91,14 @@ export default function VelotPage() {
       </div>
 
       {/* Hero image */}
-      <div className="px-8 mb-3" style={{ maxWidth: 1440, margin: "0 auto 12px" }}>
+      <div className="px-8 mb-3" style={{ maxWidth: 1920, margin: "0 auto 12px" }}>
         <AssetSlot label="HERO IMAGE" aspect="aspect-[16/9]" />
       </div>
 
       {/* Overview + side image */}
       <div
         className="px-8 flex gap-3 mb-3"
-        style={{ maxWidth: 1440, margin: "0 auto 12px" }}
+        style={{ maxWidth: 1920, margin: "0 auto 12px" }}
       >
         <div className="flex-[1.2] flex flex-col gap-6 py-12 pr-8">
           <p
@@ -129,30 +129,30 @@ export default function VelotPage() {
       </div>
 
       {/* Full width */}
-      <div className="px-8 mb-3" style={{ maxWidth: 1440, margin: "0 auto 12px" }}>
+      <div className="px-8 mb-3" style={{ maxWidth: 1920, margin: "0 auto 12px" }}>
         <AssetSlot label="FULL WIDTH" aspect="aspect-[21/9]" />
       </div>
 
       {/* 2-col grid */}
-      <div className="px-8 mb-3 grid grid-cols-2 gap-3" style={{ maxWidth: 1440, margin: "0 auto 12px" }}>
+      <div className="px-8 mb-3 grid grid-cols-2 gap-3" style={{ maxWidth: 1920, margin: "0 auto 12px" }}>
         <AssetSlot label="IMAGE A" aspect="aspect-square" />
         <AssetSlot label="IMAGE B" aspect="aspect-square" />
       </div>
 
       {/* 3-col grid */}
-      <div className="px-8 mb-3 grid grid-cols-3 gap-3" style={{ maxWidth: 1440, margin: "0 auto 12px" }}>
+      <div className="px-8 mb-3 grid grid-cols-3 gap-3" style={{ maxWidth: 1920, margin: "0 auto 12px" }}>
         <AssetSlot label="IMAGE C" aspect="aspect-[3/4]" />
         <AssetSlot label="IMAGE D" aspect="aspect-[3/4]" />
         <AssetSlot label="IMAGE E" aspect="aspect-[3/4]" />
       </div>
 
       {/* Full width 2 */}
-      <div className="px-8 mb-3" style={{ maxWidth: 1440, margin: "0 auto 12px" }}>
+      <div className="px-8 mb-3" style={{ maxWidth: 1920, margin: "0 auto 12px" }}>
         <AssetSlot label="MOCKUP" aspect="aspect-video" />
       </div>
 
       {/* 2-col uneven */}
-      <div className="px-8 mb-3 grid grid-cols-3 gap-3" style={{ maxWidth: 1440, margin: "0 auto 12px" }}>
+      <div className="px-8 mb-3 grid grid-cols-3 gap-3" style={{ maxWidth: 1920, margin: "0 auto 12px" }}>
         <div className="col-span-2">
           <AssetSlot label="IMAGE F" aspect="aspect-[4/3]" />
         </div>
@@ -160,7 +160,7 @@ export default function VelotPage() {
       </div>
 
       {/* Final full width */}
-      <div className="px-8" style={{ maxWidth: 1440, margin: "0 auto" }}>
+      <div className="px-8" style={{ maxWidth: 1920, margin: "0 auto" }}>
         <AssetSlot label="CLOSING IMAGE" aspect="aspect-video" />
       </div>
 
@@ -168,7 +168,7 @@ export default function VelotPage() {
       <div
         className="px-8 py-24 flex justify-between items-end"
         style={{
-          maxWidth: 1440,
+          maxWidth: 1920,
           margin: "0 auto",
           borderTop: "1px solid rgba(255,255,255,0.1)",
           marginTop: 64,

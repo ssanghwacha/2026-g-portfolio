@@ -52,12 +52,7 @@ export default function Navbar() {
                 aria-label="Scroll to top"
                 className="flex items-center justify-center hover:opacity-70 transition-opacity"
               >
-                <Image
-                  src="/assets/arrow-circle-up.svg"
-                  alt=""
-                  width={28}
-                  height={28}
-                />
+                <Image src="/assets/arrow-circle-up.svg" alt="" width={28} height={28} />
               </button>
             </>
           )}

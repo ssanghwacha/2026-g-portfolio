@@ -42,7 +42,8 @@ function ProjectCard({ project }: { project: typeof projects[number] }) {
 
   const inner = (
     <div
-      className="relative aspect-[4/5] rounded-xl bg-zinc-900 overflow-hidden cursor-pointer"
+      className="relative aspect-[4/5] rounded-xl overflow-hidden cursor-pointer"
+      style={{ background: "rgba(107,124,255,0.08)" }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -86,23 +87,22 @@ export default function Projects() {
     <section
       id="projects"
       className="py-24 px-8 w-full"
-      style={{ maxWidth: 1440, margin: "0 auto" }}
+      style={{ maxWidth: 1920, margin: "0 auto" }}
     >
-      <h2 className="text-2xl font-bold mb-6">Selected Works</h2>
+      <h2 className="text-2xl font-bold mb-6" style={{ color: "#6B7CFF" }}>Selected Works</h2>
 
       <div className="flex items-center gap-8 mb-10">
         {filters.map((f) => (
           <button
             key={f}
             onClick={() => setActive(f)}
-            className="flex items-center gap-2 text-sm font-medium transition-colors"
+            className="flex items-center gap-2 text-sm font-medium transition-opacity"
           >
             <span
-              className={`w-4 h-4 rounded-sm transition-colors ${
-                active === f ? "bg-white" : "bg-zinc-700"
-              }`}
+              className="w-4 h-4 rounded-sm transition-colors"
+              style={{ background: active === f ? "#6B7CFF" : "rgba(107,124,255,0.2)" }}
             />
-            <span className={active === f ? "text-white" : "text-zinc-500"}>
+            <span style={{ color: active === f ? "#6B7CFF" : "rgba(107,124,255,0.4)" }}>
               {f}
             </span>
           </button>
