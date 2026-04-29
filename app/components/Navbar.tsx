@@ -33,13 +33,13 @@ export default function Navbar() {
         <div className="flex flex-1 items-center justify-end gap-5">
           <a
             href="#about"
-            className="text-[16px] font-medium text-white hover:text-zinc-300 transition-colors"
+            className="text-base font-medium text-white hover:text-zinc-300 transition-colors"
           >
             About
           </a>
           <a
             href="#projects"
-            className="text-[16px] font-medium text-white hover:text-zinc-300 transition-colors"
+            className="text-base font-medium text-white hover:text-zinc-300 transition-colors"
           >
             Work
           </a>

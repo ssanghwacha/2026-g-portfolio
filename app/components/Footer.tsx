@@ -18,7 +18,7 @@ export default function Footer() {
           transform: "translateX(-50%)",
           background: "rgba(255, 255, 255, 0.3)",
           marginTop: 28,
-          color: "#000",
+          color: "#9ca3af",
           marginBottom: 30,
         }}
       >
@@ -42,7 +42,7 @@ export default function Footer() {
                   alt=""
                   width={16}
                   height={16}
-                  style={{ filter: "brightness(0)", transform: "translateY(-1px)" }}
+                  style={{ filter: "brightness(0) saturate(100%) invert(68%) sepia(8%) saturate(446%) hue-rotate(179deg) brightness(89%) contrast(85%)", transform: "translateY(-1px)" }}
                 />
               </a>
             ))}
@@ -51,13 +51,10 @@ export default function Footer() {
       </div>
 
       {/* Full-width name — full bleed */}
-      <div style={{ position: "relative", width: "100vw", left: "50%", transform: "translateX(-50%)", overflow: "hidden", lineHeight: 0.82 }}>
+      <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden leading-[0.82]">
         <p
+          className="whitespace-nowrap text-[15.2vw] text-white [font-family:var(--font-boldonse),system-ui]"
           style={{
-            fontFamily: "var(--font-boldonse), system-ui",
-            fontSize: "15.2vw",
-            whiteSpace: "nowrap",
-            color: "#fff",
             margin: 0,
             padding: 0,
             transform: "translateY(0.04em)",

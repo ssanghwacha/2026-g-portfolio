@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
-export default function LocationBar() {
+export default function LocationBar({ color = "#5A87A5" }: { color?: string }) {
   const [time, setTime] = useState("");
 
   useEffect(() => {
@@ -27,12 +26,20 @@ export default function LocationBar() {
   return (
     <div className="flex items-center justify-center gap-[30px] py-5">
       <div className="flex items-center gap-3">
-        <Image src="/assets/map-pin.svg" alt="location" width={20} height={20} />
-        <span className="text-[#AEFACB] text-[14px] font-medium">
+        <span
+          aria-hidden="true"
+          className="h-5 w-5"
+          style={{
+            backgroundColor: color,
+            WebkitMask: "url('/assets/map-pin.svg?v=5a87a5') center / contain no-repeat",
+            mask: "url('/assets/map-pin.svg?v=5a87a5') center / contain no-repeat",
+          }}
+        />
+        <span className="text-sm font-medium" style={{ color }}>
           Currently in Vancouver
         </span>
       </div>
-      <span className="text-[#AEFACB] text-[14px] font-medium tabular-nums">
+      <span className="text-sm font-medium tabular-nums" style={{ color }}>
         {time}
       </span>
     </div>

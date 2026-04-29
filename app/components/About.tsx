@@ -73,7 +73,7 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full px-8 pt-[460px] pb-[400px]" style={{ maxWidth: 1440, margin: "0 auto" }}>
+    <section ref={sectionRef} className="w-full px-8 pt-[360px] pb-[400px]" style={{ maxWidth: 1440, margin: "0 auto" }}>
 
       {/* Photo fan */}
       <div id="about" style={{ scrollMarginTop: 200 }} />
@@ -107,40 +107,31 @@ export default function About() {
       {/* Heading */}
       <h2
         ref={headingRef}
-        className="text-center font-medium text-white mb-10 mt-[100px]"
-        style={{
-          fontSize: 36,
-          lineHeight: "140%",
-          letterSpacing: "-0.01em",
-          fontFamily: "var(--font-boldonse), system-ui",
-        }}
+        className="flex flex-col items-center gap-5 text-center text-3xl leading-[150%] tracking-normal font-medium text-white mb-10 mt-[100px] [font-family:var(--font-boldonse),system-ui]"
       >
-        Hi,<Image src="/assets/smiley-fill.svg" alt="smile" width={48} height={48} className="inline-block" style={{ verticalAlign: "middle", marginBottom: 8 }} />
-        <br />
-        I&apos;m Sangwha, Graphic Designer
-        <br />
-        with a strong foundation in Branding.
+        <span className="inline-flex items-center gap-1 text-4xl">
+          Hi<Image src="/assets/smiley-fill.svg" alt="smile" width={48} height={48} />
+        </span>
+        <span>
+          I&apos;m Sangwha, Graphic Designer
+          <br />
+          with a strong foundation in Branding.
+        </span>
       </h2>
 
       {/* Description + buttons */}
       <div ref={bodyRef} className="flex flex-col items-center text-center mb-24">
         <p
-          className="text-white/70 mb-3"
-          style={{
-            fontSize: 18, fontWeight: 400, lineHeight: "120%", letterSpacing: "0.05em",
-            maxWidth: 696, fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-          }}
+          className="max-w-[640px] text-base font-normal leading-[120%] tracking-wider text-white/70 mb-3"
+          style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
         >
           My design journey started with branding. I was drawn to how small details, often
           overlooked, can shape people&apos;s experiences. That same perspective now guides how
           I approach design systems and digital products.
         </p>
         <p
-          className="text-white/70 mb-8"
-          style={{
-            fontSize: 18, fontWeight: 400, lineHeight: "120%", letterSpacing: "0.05em",
-            fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-          }}
+          className="text-base font-normal leading-[120%] tracking-wider text-white/70 mb-8"
+          style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
         >
           Find me on Linkedin, Behance, or via Email.
         </p>
@@ -195,8 +186,8 @@ export default function About() {
               className="flex items-center justify-between py-4 border-t border-white/10"
               style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
             >
-              <span className="text-white font-medium" style={{ fontSize: 16 }}>{role}</span>
-              <span className="text-white/70" style={{ fontSize: 16 }}>{company}&nbsp;&nbsp;{year}</span>
+              <span className="text-base text-white font-medium">{role}</span>
+              <span className="text-base text-white/70">{company}&nbsp;&nbsp;{year}</span>
             </div>
           ))}
         </div>
@@ -219,8 +210,8 @@ export default function About() {
               className="flex items-start justify-between py-4 border-t border-white/10 gap-4"
               style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
             >
-              <span className="text-white font-medium" style={{ fontSize: 16, maxWidth: "55%" }}>{degree}</span>
-              <span className="text-white/70 text-right" style={{ fontSize: 16 }}>{school}&nbsp;&nbsp;{year}</span>
+              <span className="max-w-[55%] text-base text-white font-medium">{degree}</span>
+              <span className="text-base text-white/70 text-right">{school}&nbsp;&nbsp;{year}</span>
             </div>
           ))}
         </div>

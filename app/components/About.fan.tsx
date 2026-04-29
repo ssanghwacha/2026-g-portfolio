@@ -89,8 +89,8 @@ export default function About() {
       {/* Heading */}
       <h2
         ref={headingRef}
-        className="font-medium uppercase text-white leading-tight mb-[50px]"
-        style={{ fontSize: 48, maxWidth: 1100, lineHeight: "110%", letterSpacing: "-0.01em", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+        className="max-w-[1100px] text-5xl font-medium uppercase leading-[110%] tracking-normal text-white mb-[50px]"
+        style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
       >
         Hi,{" "}
         <Image src="/assets/smiley-fill.svg" alt="smile" width={48} height={48} className="inline-block align-middle" />
@@ -102,16 +102,16 @@ export default function About() {
       {/* Body */}
       <div ref={bodyRef} className="flex flex-col items-center">
       <p
-        className="text-white/70 mb-3"
-        style={{ fontSize: 18, fontWeight: 400, lineHeight: "120%", letterSpacing: "0.05em", maxWidth: 696, fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+        className="max-w-[696px] text-lg font-normal leading-[120%] tracking-wider text-white/70 mb-3"
+        style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
       >
         My design journey started with branding. I was drawn to how small details, often
         overlooked, can shape people&apos;s experiences. That same perspective now guides how
         I approach design systems and digital products.
       </p>
       <p
-        className="text-white/70 mb-8"
-        style={{ fontSize: 18, fontWeight: 400, lineHeight: "110%", letterSpacing: "0.05em", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+        className="text-lg font-normal leading-[110%] tracking-wider text-white/70 mb-8"
+        style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
       >
         Find me on Linkedin, Behance, or via Email.
       </p>
